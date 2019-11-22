@@ -5,7 +5,9 @@ import _store from "../store.js";
 function _drawLists() {
   // get HTML
   let template = "";
-  let lists = _store.State.lists;
+  let lists = _store.Lists;
+  lists.forEach(list => (template += list.template));
+  // let lists = _store.State.lists;
   document.querySelector("#lists").innerHTML = template;
 }
 
@@ -21,13 +23,18 @@ export default class ListController {
   addList(event) {
     event.preventDefault();
     let formData = event.target;
-
     let newList = {
       name: formData.name.value
       // TODO add list item
     };
     ListService.addList(newList);
+    formData.reset();
     _drawLists();
     console.log("ADDING FROM CONTROLLER");
+  }
+
+  deleteList(id) {
+    ListService.deleteList(id);
+    _drawLists();
   }
 }

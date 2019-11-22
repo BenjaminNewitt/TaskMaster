@@ -11,6 +11,15 @@ class ListService {
     console.log("ADDING FROM LIST SERVICE");
     let list = new List(listData);
     _store.State.lists.push(list);
+    console.log(list);
+
+    _store.saveState();
+  }
+
+  deleteList(id) {
+    let foundList = _store.State.lists.findIndex(list => list.id == id);
+    console.log(foundList);
+    _store.State.lists.splice(foundList, 1);
     _store.saveState();
   }
   constructor() {
