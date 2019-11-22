@@ -6,6 +6,9 @@ class ListService {
   //given the information you need in the controller,
   //what methods will you need to do when this class is first 'constructed'?
   //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
+  constructor() {
+    console.log("Hello from ListService");
+  }
 }
 
 const SERVICE = new ListService();
