@@ -22,11 +22,12 @@ export default class ListController {
     event.preventDefault();
     let formData = event.target;
     let newList = {
-      id: "",
       name: formData.name.value,
       items: []
     };
     ListService.addList(newList);
+    console.log(newList);
+
     formData.reset();
 
     _drawLists();
