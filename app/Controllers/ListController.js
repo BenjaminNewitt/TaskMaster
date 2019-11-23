@@ -43,7 +43,6 @@ export default class ListController {
     let formData = event.target;
 
     let newItem = {
-      id: "",
       name: formData.name.value,
       listId
     };

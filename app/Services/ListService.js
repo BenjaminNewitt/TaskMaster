@@ -30,8 +30,7 @@ class ListService {
   }
 
   deleteItem(listId, itemId) {
-    debugger;
-    let foundList = _store.State.lists.find(list => listId.id == listId);
+    let foundList = _store.State.lists.find(list => list.id == listId);
     foundList.items = foundList.items.filter(item => item.id != itemId);
     _store.saveState();
   }

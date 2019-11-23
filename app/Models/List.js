@@ -20,7 +20,7 @@ export default class List {
     <p class="m-1">${this.name}</p>
   
 
-    <ul>${this.drawLists()}</ul>
+    <ul>${this.drawItems()}</ul>
 
 
     <form class="form-inline" onsubmit="app.listsController.addItem(event, '${
@@ -41,7 +41,7 @@ export default class List {
     `;
   }
 
-  drawLists() {
+  drawItems() {
     let template = "";
     this.items.forEach(item => (template += item.template));
     return template;
