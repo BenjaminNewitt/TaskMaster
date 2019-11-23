@@ -1,4 +1,5 @@
 import _store from "../store.js";
+import Item from "../Models/Item.js";
 import List from "../Models/List.js";
 
 //Public
@@ -11,8 +12,6 @@ class ListService {
     console.log("ADDING FROM LIST SERVICE");
     let list = new List(listData);
     _store.State.lists.push(list);
-    console.log(list);
-
     _store.saveState();
   }
 
@@ -20,6 +19,20 @@ class ListService {
     let foundList = _store.State.lists.findIndex(list => list.id == id);
     console.log(foundList);
     _store.State.lists.splice(foundList, 1);
+    _store.saveState();
+  }
+
+  addItem(itemData) {
+    let item = new Item(itemData);
+    let foundList = _store.State.lists.find(list => list.id == item.listId);
+    foundList.items.push(item);
+    _store.saveState();
+  }
+
+  deleteItem(listId, itemId) {
+    debugger;
+    let foundList = _store.State.lists.find(list => listId.id == listId);
+    foundList.items = foundList.items.filter(item => item.id != itemId);
     _store.saveState();
   }
   constructor() {
