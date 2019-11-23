@@ -34,8 +34,11 @@ export default class ListController {
   }
 
   deleteList(id) {
-    ListService.deleteList(id);
-    _drawLists();
+    let confirmWindow = confirm("delete list?");
+    if (confirmWindow == true) {
+      ListService.deleteList(id);
+      _drawLists();
+    }
   }
 
   addItem(event, listId) {
@@ -52,7 +55,10 @@ export default class ListController {
   }
 
   deleteItem(listId, itemId) {
-    ListService.deleteItem(listId, itemId);
-    _drawLists();
+    let confirmWindow = confirm("delete item?");
+    if (confirmWindow == true) {
+      ListService.deleteItem(listId, itemId);
+      _drawLists();
+    }
   }
 }
