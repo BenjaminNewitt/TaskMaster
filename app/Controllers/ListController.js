@@ -27,11 +27,8 @@ export default class ListController {
     };
     ListService.addList(newList);
     console.log(newList);
-
     formData.reset();
-
     _drawLists();
-    console.log("ADDING FROM CONTROLLER");
   }
 
   deleteList(id) {
