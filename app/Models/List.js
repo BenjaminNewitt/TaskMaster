@@ -12,9 +12,9 @@ export default class List {
   //Be sure to add the methods needed to create the view template for this model
   // TODO add HTML
   get template() {
-    return /* html */ `<div class="col-12 col-sm-6 col-md-4 m-3 p-3 border rounded text-left d-inline-block">
+    return /* html */ `<div class="col-12 col-sm-6 col-md-4 m-3 p-3 border rounded text-left d-inline-block bg-light text-dark">
   
-    <button class="btn btn-sm btn-outline-danger justify-content-end" onclick="app.listsController.deleteList('${
+    <button class="btn btn-sm btn-danger float-right" onclick="app.listsController.deleteList('${
       this.id
     }')">X</button>
     <p class="m-1">${this.name}</p>

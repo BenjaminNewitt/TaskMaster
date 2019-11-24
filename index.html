@@ -15,17 +15,17 @@
     <title>TaskMaster</title>
   </head>
 
-  <body>
-    <header class="container-fluid border h-25 ">
+  <body class="text-white bg-secondary">
+    <header class="container-fluid h-20 bg-dark ">
       <div class="row h-100 align-items-center">
-        <h1 class="col-12">TaskMaster</h1>
+        <h1 class="col-12 text-center">TaskMaster</h1>
       </div>
     </header>
-    <main class="container-fluid h-65">
+    <main class="container-fluid h-70">
       <!-- 1st row holds list creation -->
-      <div class="row">
-        <div class="col-12">
-                <form class="form-inline" onsubmit="app.listsController.addList(event)">
+      <div class="row justify-content-center">
+        <div class="col-12 mt-3">
+                <form class="form-inline justify-content-center" onsubmit="app.listsController.addList(event)">
                         <div class="form-group mx-sm-2 mb-2">
                           <input
                             type="text"
@@ -35,7 +35,7 @@
                             placeholder="enter list title..."
                           />
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">
+                        <button type="submit" class="btn btn-primary mb-2 ml-2">
                           add
                         </button>
         </div>
