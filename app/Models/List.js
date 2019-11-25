@@ -12,7 +12,7 @@ export default class List {
   //Be sure to add the methods needed to create the view template for this model
   // TODO add HTML
   get template() {
-    return /* html */ `<div class="col-6 col-md-5 m-3 p-3 border rounded text-left d-inline-block bg-light text-dark">
+    return /* html */ `<div class="col-10 m-auto col-sm-6 border rounded text-left d-inline-block bg-light text-dark">
   
     <button class="btn btn-sm btn-danger float-right" onclick="app.listsController.deleteList('${
       this.id
@@ -23,7 +23,7 @@ export default class List {
     <ul>${this.drawItems()}</ul>
 
 
-    <form class="form-inline" onsubmit="app.listsController.addItem(event, '${
+    <form class="form-inline d-flex" onsubmit="app.listsController.addItem(event, '${
       this.id
     }')">
       <div class="form-group">
@@ -35,7 +35,7 @@ export default class List {
           placeholder="enter item here..."
           required
         />
-        <button type="submit" class="btn btn-primary float-right m-1">+</button>
+        <button type="submit" class="btn btn-primary float-right btn-sm m-1">+</button>
       </div>
     </form>
   </div>
