@@ -23,19 +23,19 @@ export default class List {
     <ul>${this.drawItems()}</ul>
 
 
-    <form class="form-inline d-flex" onsubmit="app.listsController.addItem(event, '${
+    <form class="form-inline-block" onsubmit="app.listsController.addItem(event, '${
       this.id
     }')">
       <div class="form-group">
         <input
           type="text"
           name="name"
-          class="form-control float-left input-sm m-1"
+          class="form-control input-sm m-1"
           id="name"
           placeholder="enter item here..."
           required
         />
-        <button type="submit" class="btn btn-primary float-right btn-sm m-1">+</button>
+        <button type="submit" class="btn btn-primary btn-sm m-1">+</button>
       </div>
     </form>
   </div>
