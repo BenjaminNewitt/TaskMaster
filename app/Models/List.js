@@ -33,6 +33,7 @@ export default class List {
           class="form-control float-left input-sm m-1"
           id="name"
           placeholder="enter item here..."
+          required
         />
         <button type="submit" class="btn btn-primary float-right m-1">+</button>
       </div>
